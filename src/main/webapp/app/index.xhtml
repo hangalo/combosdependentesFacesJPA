@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+    <f:view>
+        <h:head>
+            <title>Facelet Title</title>
+        </h:head>
+        <h:body>
+            <center>
+                <p:outputLabel>Welcome to the application!</p:outputLabel>
+                <h3>
+                    <p>Logged-in as #{request.userPrincipal.name}</p>
+                </h3>
+
+                <h:form>
+                    <h:commandButton value="Novo" action="usuario_novo?faces-redirect=true"/> 
+                    <h:commandButton value="Listas dos Usuarios" action="ususarios_gestao?faces-redirect=true"/> 
+                    <h:commandButton value="Usuarios e grupos" action="ususarios?faces-redirect=true"/> 
+                    <h:commandButton value="Logout" action="#{logoutBean.logout}"/>
+                </h:form>
+            </center>
+        </h:body>
+    </f:view>
+</html>

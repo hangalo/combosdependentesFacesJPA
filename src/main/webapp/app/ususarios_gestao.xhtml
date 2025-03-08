@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Usuários </title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:dataTable value="#{usuarioGestaoBean.usuarios}" var="item">
+                <p:column headerText="Usuario">
+                    <h:outputText value="#{item.usario}"/>
+                </p:column>
+
+                <p:column headerText="Senha">
+                    <h:outputText value="#{item.password}"/>
+                </p:column>
+
+                <p:column headerText="Nome">
+                    <h:outputText value="#{item.nomeUsuario}"/>
+                </p:column>
+
+                <p:column headerText="Sobrenome">
+                    <h:outputText value="#{item.sobrenomeUsuario}"/>
+                </p:column>
+
+                <p:column headerText="Operações">
+                    <p:commandButton value="Actualizar" action="usuario_editar?faces-redirect=true" icon="fa fa-fw fa-edit">
+                        <f:setPropertyActionListener target="#{usuarioGestaoBean.usuario}" value="#{item}"/>
+                    </p:commandButton>
+
+                </p:column>
+
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>

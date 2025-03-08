@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:head>
+            <title>Novo Usuario</title>
+        </h:head>
+        <h:body>
+            <h:form>
+                <p:panel header="Novo Usuário">
+                    <h:panelGrid columns="3">
+                        <h:outputLabel value="Usuário" for="usuario"/>
+                        <h:inputText id="usuario" value="#{usuarioBean.usuario.usario}"/>
+                        <h:message for="usuario"/>
+                        <h:outputLabel value="Senha" for="senha"/>
+                        <h:inputSecret id="senha" value="#{usuarioBean.usuario.password}"/>
+                        <h:message for="senha"/>
+                        <h:outputLabel value="Nome" for="nome"/>
+                        <h:inputText id="nome" value="#{usuarioBean.usuario.nomeUsuario}"/>
+                        <h:message for="nome"/>
+                        <h:outputLabel value="Sobrenome" for="sobrenome"/>
+                        <h:inputText id="sobrenome" value="#{usuarioBean.usuario.sobrenomeUsuario}"/>
+                        <h:message for="sobrenome"/>
+                    </h:panelGrid>
+                    <p:commandButton value="Guardar" action="#{usuarioBean.save}"/>
+                </p:panel>
+            </h:form>
+            <h:form>
+             <p:commandLink value="Home" action="index?faces-redirect=true"/>
+             </h:form>
+        </h:body>
+
+
+    </f:view>
+</html>
